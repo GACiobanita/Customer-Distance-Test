@@ -1,27 +1,45 @@
+import distanceCalculation as dCalc
+
 filepath = input("Enter a file path or the program will use the default file:")
 try:
     fhand = open(filepath)
 except:
     print("Default file is used instead.") #if the input file path is wrong or the input is incorrect, or simply because the user wanted this to occur
-    fhand = open("customers.txt") #takes the same amount of time regardless of file size
+    fhand = open("D:\Python\Customer-Distance-Test\Customer-Distance-Test\customers.txt") #takes the same amount of time regardless of file size
 
-remove = str.maketrans(dict.fromkeys(' :"'))#create a dictionary from keys, then create a table "remove"
+remove = str.maketrans(dict.fromkeys('""}{'))#create a dictionary from keys, then create a table "remove"
 
 count = 0
 userID = 0
 name = "Unknown"
 lat = 0
 lon = 0
+invList = list()
 for line in fhand:
-    lineContents=line.split(',')
-    
+    line = line.strip()
+    line = line.translate(remove)
+    lineContents=line.split(',') # list of 4 elements: {lat_0, user_id_1, name_2, lon_3}
+
     pos = lineContents[0].find(':')
-    tempVal = lineContents[0][pos:len(lineContents[0])-1]
-    tempVal = tempVal.translate(remove) #use the table to create a new string, we still use tempVal in this case, removing the characters in the table from the string
-    lat = float(tempVal)                #this could be futher extended to also remove all the letters from the start, leaving us only the numbers we need in the sections of the list we are interested
+    tempVal = lineContents[0][pos+1:len(lineContents[0])]
+    lat = float(tempVal)                
     
     pos = lineContents[3].find(':')
-    tempVal = lineContents[3][pos:len(lineContents[3])-1]
-    tempVal = tempVal.translate(remove)
+    tempVal = lineContents[3][pos+1:len(lineContents[3])]
     lon = float(tempVal)
 
+    dist = dCalc.calculate_distance(lat, lon)
+    if dist <= 100.0 :    
+        pos = lineContents[1].find(':')
+        tempVal = lineContents[1][pos+1:len(lineContents[1])]
+        userID=int(tempVal)
+        
+        print(lineContents[2])
+        pos = lineContents[2].find(':')
+        tempVal = lineContents[2][pos+2:len(lineContents[2])] #+2 to remove an additional space before the name
+        name = tempVal
+
+        invList.append((userID, name))
+
+for elem in invList:
+    print(elem)    
