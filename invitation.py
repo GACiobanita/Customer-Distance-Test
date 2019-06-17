@@ -1,14 +1,17 @@
 import distanceCalculation as dCalc
-import mergeSort as mSort
+import quickSort as qSort
+from timeit import default_timer as timer #for time measurement of the running program
 
 filepath = input("Enter a file path or the program will use the default file:")
 try:
     fhand = open(filepath)
 except:
     print("Default file is used instead.") #if the input file path is wrong or the input is incorrect, or simply because the user wanted this to occur
-    fhand = open("customers.txt") #takes the same amount of time regardless of file size
+    fhand = open("d:\Python\Customer-Distance-Test\Customer-Distance-Test\customers.txt") #takes the same amount of time regardless of file size
 
 remove = str.maketrans(dict.fromkeys('""}{'))#create a dictionary from keys, then create a table "remove"
+
+startTime = timer() #added a timer to check for algorithm speed, Visual Studio Code does not have "CPU Usage" feature
 
 count = 0
 userID = 0
@@ -43,6 +46,7 @@ for line in fhand:
 
         invList.append((userID, name))
 
-mSort.mergeSort(invList)
+qSort.quickSort(invList, 0, len(invList)-1)
+print("Time to complete this run was:", timer()-startTime)
 for elem in invList:
     print(elem)    
