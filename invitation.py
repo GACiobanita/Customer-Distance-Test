@@ -1,11 +1,12 @@
 import distanceCalculation as dCalc
+import mergeSort as mSort
 
 filepath = input("Enter a file path or the program will use the default file:")
 try:
     fhand = open(filepath)
 except:
     print("Default file is used instead.") #if the input file path is wrong or the input is incorrect, or simply because the user wanted this to occur
-    fhand = open("D:\Python\Customer-Distance-Test\Customer-Distance-Test\customers.txt") #takes the same amount of time regardless of file size
+    fhand = open("customers.txt") #takes the same amount of time regardless of file size
 
 remove = str.maketrans(dict.fromkeys('""}{'))#create a dictionary from keys, then create a table "remove"
 
@@ -15,6 +16,7 @@ name = "Unknown"
 lat = 0
 lon = 0
 invList = list()
+
 for line in fhand:
     line = line.strip()
     line = line.translate(remove)
@@ -29,17 +31,18 @@ for line in fhand:
     lon = float(tempVal)
 
     dist = dCalc.calculate_distance(lat, lon)
+
     if dist <= 100.0 :    
         pos = lineContents[1].find(':')
         tempVal = lineContents[1][pos+1:len(lineContents[1])]
         userID=int(tempVal)
         
-        print(lineContents[2])
         pos = lineContents[2].find(':')
         tempVal = lineContents[2][pos+2:len(lineContents[2])] #+2 to remove an additional space before the name
         name = tempVal
 
         invList.append((userID, name))
 
+mSort.mergeSort(invList)
 for elem in invList:
     print(elem)    
