@@ -12,3 +12,10 @@ trees will required more memory.
 
 The choice on algorithm selection will be influenced by the type of data available, and data structures, and how much memory usage is available or allowed to be used,
 as memory usage optimization could not be considered a priority depending on the task.
+
+How to run the program:
+1. Download all of the files in the same folder.
+2. Run invitation.py from cmd.
+3. Either enter a path to a file e.g.: "D:\Python\\Customer-Distance-Test\customers.txt" or press enter for the program to use the 
+one in the folder.
+4. See output in the command window.
