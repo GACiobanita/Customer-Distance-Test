@@ -1,0 +1,14 @@
+Conclussions:
+1.Merge Sort is the selected algorithm for sorting.
+	-Has better average performance, despite the amount of data, whereas Quick Sort is faster on smaller data sets.
+	-The worse case complexity(also applies for average and best cases) of Merge Sort is the best case for Quick Sort: O(nlogn).
+	-Fits our approach best as we first build our dataset then sort it.
+2.We use tuples to ease the process on ourselves, by having the algorithms sort based on the key, user id in our case, while ignoring the second element.
+
+An alternative to this is the creation of an array as elements enter inside of it, by using Binary Search Trees.
+With this approach the list created will always be in a sorted state, however different worse cases can appear as the binary tree
+can be balanced(O(nlogn) not too different from Merge Sort) or unbalanced(O(n^2) which is worse than Merge Sort). The fix for unbalanced
+trees will required more memory.
+
+The choice on algorithm selection will be influenced by the type of data available, and data structures, and how much memory usage is available or allowed to be used,
+as memory usage optimization could not be considered a priority depending on the task.
