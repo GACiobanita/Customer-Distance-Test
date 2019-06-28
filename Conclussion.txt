@@ -37,5 +37,5 @@ Notes:
 -output files missing
 -ValueObject pattern: https://martinfowler.com/bliki/ValueObject.html
 -use constants
--consider making a command line interface
+-consider making a command line interface(not as important)
 -consider python unittest
