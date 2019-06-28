@@ -19,3 +19,23 @@ How to run the program:
 3. Either enter a path to a file e.g.: "D:\Python\\Customer-Distance-Test\customers.txt" or press enter for the program to use the 
 one in the folder.
 4. See output in the command window.
+
+Notes:
++different sorting algorithms
+-test was more about code structure
+-text comparison of all the timings(Timeit python benchmarking package)
+-best if I did sorting on the fly for quick sort and merge sort
+-python 3.7 installed and packages guide(example: numpy was missing as an installation instruction)
+-move Conlussion to README.md
+-include tests for code
+-if you borrow implementations, why not just use the standard library?
+-include the file for sort algorithm performance
+-include library for sorting instead of borrowing?
+-what do they care about in this test?
+-do not make the assumption that the other person has as much knowledge as you
+-input options?
+-output files missing
+-ValueObject pattern: https://martinfowler.com/bliki/ValueObject.html
+-use constants
+-consider making a command line interface
+-consider python unittest
