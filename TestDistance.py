@@ -6,7 +6,7 @@ class TestDistance(unittest.TestCase):
 
     def test_distance1(self):
         testCoord=Coordinate(52.986375,-6.043701)
-        self.assertEqual(41.77, distanceCalc.distance(testCoord))
+        self.assertEqual(41.76872550078046, distanceCalc.distance(testCoord))
 
     def test_distance2(self):
         testCoord1=Coordinate(52.986375, -6.043701)
