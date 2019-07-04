@@ -1,0 +1,26 @@
+C:\Users\Alex\GitHub\Customer-Distance-Test>cd c:\Users\Alex\GitHub\Customer-Distance-Test && cmd /C "set "PYTHONIOENCODING=UTF-8" && set "PYTHONUNBUFFERED=1" && C:\Users\Alex\AppData\Local\Programs\Python\Python37-32\python.exe c:\Users\Alex\.vscode\extensions\ms-python.python-2019.6.22090\pythonFiles\ptvsd_launcher.py --default --client --host localhost --port 56522 c:\Users\Alex\GitHub\Customer-Distance-Test\TestDistance.py "
+EE
+======================================================================
+ERROR: test_distance1 (__main__.TestDistance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\Alex\GitHub\Customer-Distance-Test\TestDistance.py", line 9, in test_distance1
+    self.assertEqual(41.77, distanceCalc.distance(testCoord))
+  File "c:\Users\Alex\GitHub\Customer-Distance-Test\distanceCalc.py", line 15, in distance
+    delta = c - DUBLIN
+TypeError: unsupported operand type(s) for -: 'method' and 'Coordinate'
+
+======================================================================
+ERROR: test_distance2 (__main__.TestDistance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\Alex\GitHub\Customer-Distance-Test\TestDistance.py", line 14, in test_distance2
+    self.assertEqual(309.94, distanceCalc.distance(testCoord1, testCoord2))
+  File "c:\Users\Alex\GitHub\Customer-Distance-Test\distanceCalc.py", line 23, in distance
+    delta = c1 - c2
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.008s
+
+FAILED (errors=2)
