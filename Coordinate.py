@@ -11,3 +11,12 @@ class Coordinate(object):
 
     def to_radians(self):
         return  self.__class__(radians(self.lat), radians(self.lon))
+
+    def __eq__(self, other):
+        if self.lat==other.lat and self.lon==other.lon:
+            return True
+        else:
+            return False    
+
+    def __str__(self):
+        return self.lat + " " + self.lon    

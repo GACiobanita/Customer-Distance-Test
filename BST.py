@@ -23,5 +23,10 @@ class BST:
             else:
                 currentNode.rightChild = Node(cust)
     
-    def ascending_list(self, node):
-
+    def inorder_traversal(self, node):
+        customerList = []
+        if node:
+            customerList = self.inorder_traversal(node.left)
+            customerList.append(node.customer)
+            customerList = customerList + self.inorder_traversal(node.right)
+        return customerList
