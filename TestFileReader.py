@@ -19,12 +19,18 @@ class TestFileReader(unittest.TestCase):
        print(self.fileReader.data)
 
     def test_read_input_valid_path(self):
-         self.fileReader.acquire_filepath()
-         self.fileReader.read_from_filepath()
-         self.assertIsNot(0, len(self.fileReader.data))
-         print("test_read_input_valid_path: " + self.fileReader.input_filePath)
+        self.fileReader.acquire_filepath()
+        self.fileReader.read_from_filepath()
+        self.assertIsNot(0, len(self.fileReader.data))
+        print("test_read_input_valid_path: " + self.fileReader.input_filePath)
 
     def test_read_input_invalid_path(self):
+        self.fileReader.acquire_filepath()
+        self.fileReader.read_from_filepath()
+        self.assertIsNot(0, len(self.fileReader.data))
+        #print("test_read_input_invalid_path: " + self.fileReader.input_filePath)
+
+    def test_read_input_invalid_data(self):
         self.fileReader.acquire_filepath()
         self.fileReader.read_from_filepath()
         self.assertIsNot(0, len(self.fileReader.data))
