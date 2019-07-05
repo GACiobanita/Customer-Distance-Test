@@ -19,3 +19,7 @@ class TestBST(unittest.TestCase):
         treeContents=self.tree.inorder_traversal(self.tree.root)
         self.assertEqual(10, len(treeContents))
         self.assertIsNot(0 , len(treeContents))
+        
+if __name__ == "__main__":
+    unittest.main()
+    print("Everything passed")                
