@@ -1,4 +1,4 @@
-from Customer import Customer
+from implementation.customer import Customer
 
 class Node(object):
 

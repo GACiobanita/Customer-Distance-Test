@@ -1,5 +1,5 @@
-from Node import Node
-from Customer import Customer
+from .node import Node
+from implementation.customer import Customer
 
 class BST:
     def __init__(self):

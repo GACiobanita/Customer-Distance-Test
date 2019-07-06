@@ -1,5 +1,5 @@
 from math import * #for sin, cos, acos , fabs, radians
-from Coordinate import Coordinate
+from . import Coordinate
     
 #Dublin's location
 DUBLIN = Coordinate(radians(53.339428), radians(-6.257664))

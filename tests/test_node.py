@@ -1,6 +1,6 @@
 import unittest
-from Node import Node
-from Customer import Customer
+from implementation.algorithms.node import Node
+from implementation.customer import Customer
 
 class TestNode(unittest.TestCase):
 

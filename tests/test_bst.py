@@ -1,8 +1,8 @@
 import unittest
 import random
-from BST import BST
-from Node import Node
-from Customer import Customer
+from implementation.algorithms.bst import BST
+from implementation.algorithms.node import Node
+from implementation.customer import Customer
 
 class TestBST(unittest.TestCase):
     def setUp(self):

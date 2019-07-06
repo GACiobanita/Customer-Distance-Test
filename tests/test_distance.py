@@ -1,6 +1,6 @@
 import unittest
-import distanceCalc
-from Coordinate import Coordinate
+from implementation import distanceCalc
+from implementation.coordinate import Coordinate
 
 class TestDistance(unittest.TestCase):
 
