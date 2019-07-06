@@ -18,13 +18,13 @@ def partition(arr,low,high):
     arr[i+1],arr[high] = arr[high],arr[i+1] 
     return ( i+1 ) 
   
-# The main function that implements QuickSort 
+# The main function that implements quick_sort 
 # arr[] --> Array to be sorted, 
 # low  --> Starting index, 
 # high  --> Ending index 
   
-# Function to do Quick sort 
-def quickSort(arr,low,high): 
+# Function to do Quick sort
+def quick_sort(arr,low,high): 
     if low < high: 
   
         # pi is partitioning index, arr[p] is now 
@@ -33,5 +33,5 @@ def quickSort(arr,low,high):
   
         # Separately sort elements before 
         # partition and after partition 
-        quickSort(arr, low, pi-1) 
-        quickSort(arr, pi+1, high) 
+        quick_sort(arr, low, pi-1) 
+        quick_sort(arr, pi+1, high) 

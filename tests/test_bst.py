@@ -5,20 +5,20 @@ from implementation.algorithms.node import Node
 from implementation.customer import Customer
 
 class TestBST(unittest.TestCase):
-    def setUp(self):
+    def set_up(self):
         self.tree=BST()
         for i in range(5,10):
-            testCustomer=Customer(random.randint(1, 101), "Customer"+i, lat=i, lon=i+1)
-            self.tree.insert(testCustomer)
+            test_customer=Customer(random.randint(1, 101), "Customer"+i, lat=i, lon=i+1)
+            self.tree.insert(test_customer)
         for i in range(0,5):
-            testCustomer=Customer(random.randint(1, 101), "Customer"+i, lat=i, lon=i+1)
-            self.tree.insert(testCustomer)
+            test_customer=Customer(random.randint(1, 101), "Customer"+i, lat=i, lon=i+1)
+            self.tree.insert(test_customer)
 
     def test_tree(self):
-        treeContents=[]
-        treeContents=self.tree.inorder_traversal(self.tree.root)
-        self.assertEqual(10, len(treeContents))
-        self.assertIsNot(0 , len(treeContents))
+        tree_contents=[]
+        tree_contents=self.tree.inorder_traversal(self.tree.root)
+        self.assertEqual(10, len(tree_contents))
+        self.assertIsNot(0 , len(tree_contents))
         
 if __name__ == "__main__":
     unittest.main()

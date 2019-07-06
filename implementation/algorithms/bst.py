@@ -9,24 +9,24 @@ class BST:
         if(self.root is None):
             self.root = Node(cust)
         else:
-            self.insertNode(self.root, cust)
+            self.insert_node(self.root, cust)
     
-    def insertNode(self, currentNode, cust):
-        if (cust.id < currentNode.val):
-            if(currentNode.leftChild):
-                self.insertNode(currentNode.left, cust)
+    def insert_node(self, current_node, cust):
+        if (cust.id < current_node.val):
+            if(current_node.left_child):
+                self.insert_node(current_node.left, cust)
             else:
-                currentNode.leftChild = Node(cust)
-        elif (cust.id > currentNode.val):
-            if(currentNode.rightChild):
-                self.insertNode(currentNode.rightChild, cust)
+                current_node.left_child = Node(cust)
+        elif (cust.id > current_node.val):
+            if(current_node.right_child):
+                self.insert_node(current_node.right_child, cust)
             else:
-                currentNode.rightChild = Node(cust)
+                current_node.right_child = Node(cust)
     
     def inorder_traversal(self, node):
-        customerList = []
+        customer_list = []
         if node:
-            customerList = self.inorder_traversal(node.left)
-            customerList.append(node.customer)
-            customerList = customerList + self.inorder_traversal(node.right)
-        return customerList
+            customer_list = self.inorder_traversal(node.left)
+            customer_list.append(node.customer)
+            customer_list = customer_list + self.inorder_traversal(node.right)
+        return customer_list
