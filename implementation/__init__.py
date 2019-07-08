@@ -1,9 +1,9 @@
 from .coordinate import Coordinate
 from .customer import Customer
-from . import distanceCalc
+from . import distance_calc
 from .file_reader import FileReader
 
 __all__ = ["Coordinate",
            "Customer",
-           "distanceCalc",
+           "distance_calc",
            "FileReader"]
