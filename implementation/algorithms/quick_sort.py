@@ -1,6 +1,8 @@
 # Implementation of the Divide and Conquer algorithm Quick Sort
 # Borrowed from: https://www.geeksforgeeks.org/quick-sort/
 # Code by Mohit Kumra
+from implementation.customer import Customer
+
 def partition(arr, low, high):
     i = (low - 1)  # index of smaller element
     pivot = arr[high]  # pivot
@@ -9,7 +11,7 @@ def partition(arr, low, high):
 
         # If current element is smaller than or 
         # equal to pivot 
-        if arr[j] <= pivot:
+        if arr[j].id <= pivot.id:
             # increment index of smaller element 
             i = i + 1
             arr[i], arr[j] = arr[j], arr[i]
