@@ -1,11 +1,11 @@
 import unittest
-from implementation.file_reader import FileReader
+from implementation.user_inviter import UserInviter
 
 
 class TestFileReader(unittest.TestCase):
 
     def setUp(self):
-        self.file_reader = FileReader()
+        self.file_reader = UserInviter()
 
     def test_paths(self):
         self.file_reader.acquire_filepath()
@@ -37,6 +37,12 @@ class TestFileReader(unittest.TestCase):
         self.assertIsNot(0, len(self.file_reader.data))
         print("test_read_input_invalid_path: " + self.file_reader.input_file_path)
 
+    def test_create_customer_data(self):
+        self.file_reader.acquire_filepath()
+        self.file_reader.read_from_filepath()
+        self.file_reader.create_customer_data()
+        for data in self.file_reader.customerData:
+            print(data)
 
 if __name__ == "__main__":
     unittest.main()

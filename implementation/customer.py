@@ -4,10 +4,10 @@ from .coordinate import Coordinate
 # how information from the customer.txt file will be stored during program activity
 class Customer(object):
 
-    def __init__(self, id=0, name='None', lat=0, lon=0):
+    def __init__(self, id=0, name='None', coord=None):
         self.id = id
         self.name = name
-        self.coord = Coordinate(lat, lon)
+        self.coord = coord
 
     def get_coord(self):
         return Coordinate(self.coord.lat, self.coord.lon)
@@ -21,4 +21,4 @@ class Customer(object):
             return False
 
     def __str__(self):
-        return "Customer " + self.name + " with ID: " + self.id + " and coordinates: " + self.coord
+        return "Customer " + self.name + " with ID: " + str(self.id) + " and coordinates: " + str(self.coord)

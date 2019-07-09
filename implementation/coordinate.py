@@ -26,4 +26,4 @@ class Coordinate(object):
             return False
 
     def __str__(self):
-        return self.lat + " " + self.lon
+        return str(self.lat) + " " + str(self.lon)
