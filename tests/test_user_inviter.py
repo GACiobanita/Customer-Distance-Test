@@ -2,7 +2,7 @@ import unittest
 from implementation.user_inviter import UserInviter
 
 
-class TestFileReader(unittest.TestCase):
+class TestUserInviter(unittest.TestCase):
 
     def setUp(self):
         self.file_reader = UserInviter()
@@ -43,6 +43,15 @@ class TestFileReader(unittest.TestCase):
         self.file_reader.create_customer_data()
         for data in self.file_reader.customerData:
             print(data)
+
+    def test_display_customer_data(self):
+        self.file_reader.acquire_filepath()
+        self.file_reader.read_from_filepath()
+        self.file_reader.create_customer_data()
+        self.file_reader.display_customer_data()
+        for data in self.file_reader.customerData:
+            print(data)
+
 
 if __name__ == "__main__":
     unittest.main()
