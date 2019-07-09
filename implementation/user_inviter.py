@@ -3,6 +3,7 @@ import json
 from .customer import Customer
 from .coordinate import Coordinate
 from . import distance_calc
+from .algorithms import merge_sort
 
 
 class UserInviter(object):
@@ -32,7 +33,7 @@ class UserInviter(object):
 
     def create_customer_data(self):
         for data in self.fileData:
-            customer_location = Coordinate(data.get("latitude"), data.get("longitude"))
+            customer_location = Coordinate(float(data.get("latitude")), float(data.get("longitude")))
             if distance_calc.distance(customer_location) <= 100:
                 self.customerData.append(
                     Customer(
@@ -41,4 +42,6 @@ class UserInviter(object):
                 )
 
     def display_customer_data(self):
-        
+        merge_sort(self.customerData)
+        for customer in self.customerData:
+            print(customer)

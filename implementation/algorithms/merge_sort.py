@@ -1,6 +1,8 @@
 # Implementation of the Divide and Conquer algorithm Merge Sort
 # Borrowed from: https://www.geeksforgeeks.org/merge-sort/
 # Code by Mayank Khanna
+from implementation.customer import Customer
+
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2  # Finding the mid of the array
@@ -14,7 +16,7 @@ def merge_sort(arr):
 
         # Copy data to temp arrays L[] and R[] 
         while i < len(L) and j < len(R):
-            if L[i] < R[j]:
+            if L[i].id < R[j].id:
                 arr[k] = L[i]
                 i += 1
             else:
