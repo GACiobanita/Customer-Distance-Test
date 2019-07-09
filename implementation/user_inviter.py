@@ -3,7 +3,7 @@ import json
 from .customer import Customer
 from .coordinate import Coordinate
 from . import distance_calc
-
+from .algorithms import BST
 
 class UserInviter(object):
 
@@ -13,6 +13,7 @@ class UserInviter(object):
         self.input_file_path = self.CUSTOMER_FILE
         self.fileData = []
         self.customerData = []
+        self.bst = BST()
 
     def acquire_filepath(self):
         input_path = input("Enter the path leading towards the desired file: ")
@@ -32,13 +33,15 @@ class UserInviter(object):
 
     def create_customer_data(self):
         for data in self.fileData:
-            customer_location = Coordinate(data.get("latitude"), data.get("longitude"))
+            customer_location = Coordinate(float(data.get("latitude")), float(data.get("longitude")))
             if distance_calc.distance(customer_location) <= 100:
-                self.customerData.append(
+                self.bst.insert(
                     Customer(
                         data.get("user_id"), data.get("name"), customer_location
                     )
                 )
 
     def display_customer_data(self):
-        
+        self.customerData = self.bst.inorder_traversal(self.bst.root)
+        for customer in self.customerData:
+            print(customer)
