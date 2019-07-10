@@ -7,6 +7,8 @@ from .algorithms import BST
 #It is responsible of checking the JSON keys for validity and for
 #calculating the distance between the customer coordinates and the
 #Dublin office coordinates
+#An output file, "output.txt" will be created in the same folder
+#as user_inviter.py
 
 class UserInviter(object):
 
@@ -31,6 +33,13 @@ class UserInviter(object):
         self.customerData = self.bst.inorder_traversal(self.bst.root)
         for customer in self.customerData:
             print(customer)
+        UserInviter.output_customers_to_file(self)
+
+    def output_customers_to_file(self):
+        file = open("output.txt", "a+")
+        for customer in self.customerData:
+            file.write(str(customer) + '\n')
+        file.close()
 
     def check_json_data(data):
         if data.get("latitude") is None:

@@ -1,0 +1,16 @@
+Customer Ian Kehoe with ID: 4 and coordinates: 53.2451022 -6.238335
+Customer Nora Dempsey with ID: 5 and coordinates: 53.1302756 -6.2397222
+Customer Theresa Enright with ID: 6 and coordinates: 53.1229599 -6.2705202
+Customer Eoin Ahearn with ID: 8 and coordinates: 54.0894797 -6.18671
+Customer Richard Finnegan with ID: 11 and coordinates: 53.008769 -6.1056711
+Customer Christina McArdle with ID: 12 and coordinates: 52.986375 -6.043701
+Customer Olive Ahearn with ID: 13 and coordinates: 53.0 -7.0
+Customer Michael Ahearn with ID: 15 and coordinates: 52.966 -6.463
+Customer Patricia Cahill with ID: 17 and coordinates: 54.180238 -5.920898
+Customer Eoin Gallagher with ID: 23 and coordinates: 54.080556 -6.361944
+Customer Rose Enright with ID: 24 and coordinates: 54.133333 -6.433333
+Customer Stephen McArdle with ID: 26 and coordinates: 53.038056 -7.653889
+Customer Oliver Ahearn with ID: 29 and coordinates: 53.74452 -7.11167
+Customer Nick Enright with ID: 30 and coordinates: 53.761389 -7.2875
+Customer Alan Behan with ID: 31 and coordinates: 53.1489345 -6.8422408
+Customer Lisa Ahearn with ID: 39 and coordinates: 53.0033946 -6.3877505
