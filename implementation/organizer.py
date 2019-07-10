@@ -1,12 +1,14 @@
 import json
 import os
 
+
 class Organizer(object):
 
     def __init__(self):
         self.ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
         self.CUSTOMER_FILE = self.ROOT_DIR + '\\' + "customers.txt"
         self.input_file_path = self.CUSTOMER_FILE
+        self.fileData = []
 
     def acquire_filepath(self):
         input_path = input("Enter the path leading towards the desired file: ")

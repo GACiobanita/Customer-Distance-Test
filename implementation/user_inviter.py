@@ -8,40 +8,34 @@ from .algorithms import BST
 class UserInviter(object):
 
     def __init__(self):
-        self.ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-        self.CUSTOMER_FILE = self.ROOT_DIR + '\\' + "customers.txt"
-        self.input_file_path = self.CUSTOMER_FILE
-        self.fileData = []
         self.customerData = []
         self.bst = BST()
 
-    def acquire_filepath(self):
-        input_path = input("Enter the path leading towards the desired file: ")
-        if os.path.exists(input_path) is True:
-            self.input_file_path = input_path
-        else:
-            print("File path is incorrect, default file will be used instead.")
-
-    def read_from_filepath(self):
-        with open(self.input_file_path) as jsonFile:
-            for line in jsonFile:
-                try:
-                    self.fileData.append(json.loads(line))
-                except ValueError:
-                    print("Encountered error for line: " + line)
-                    continue
-
-    def create_customer_data(self):
-        for data in self.fileData:
-            customer_location = Coordinate(float(data.get("latitude")), float(data.get("longitude")))
-            if distance_calc.distance(customer_location) <= 100:
-                self.bst.insert(
-                    Customer(
-                        data.get("user_id"), data.get("name"), customer_location
+    def create_customer_data(self, fileData):
+        for data in fileData:
+            if UserInviter.check_json_data(data) is True:
+                customer_location = Coordinate(float(data.get("latitude")), float(data.get("longitude")))
+                if distance_calc.distance(customer_location) <= 100:
+                    self.bst.insert(
+                        Customer(
+                            data.get("user_id"), data.get("name"), customer_location
+                        )
                     )
-                )
+            else:
+                print("Found invalid json key for latitude/longitude, will skip the following line:" + str(data))
 
     def display_customer_data(self):
         self.customerData = self.bst.inorder_traversal(self.bst.root)
         for customer in self.customerData:
             print(customer)
+
+    def check_json_data(data):
+        if data.get("latitude") is None:
+            return False
+        if data.get("longitude") is None:
+            return False
+        if data.get("user_id") is None:
+            return False
+        if data.get("name") is None:
+            return False
+        return True

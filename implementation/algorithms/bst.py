@@ -5,12 +5,14 @@ from implementation.customer import Customer
 class BST:
     def __init__(self):
         self.root = None
+        self.nodeCount = 0
 
     def insert(self, cust):
         if self.root is None:
             self.root = Node(cust)
         else:
             self.insert_node(self.root, cust)
+        self.nodeCount += 1
 
     def insert_node(self, current_node, cust):
         if cust.id < current_node.val:
