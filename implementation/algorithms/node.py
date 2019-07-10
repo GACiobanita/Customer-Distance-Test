@@ -1,6 +1,7 @@
 from implementation.customer import Customer
 
-
+#Nodes used by the BST algorithm
+#Each node has its own Customer data and a reference to its child nodes
 class Node(object):
 
     def __init__(self, cust):

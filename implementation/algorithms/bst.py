@@ -1,7 +1,10 @@
 from .node import Node
 from implementation.customer import Customer
 
-
+#Implementation of a Binary Search Tree for fast addition and lookup of Customers
+#Each node in the BST holds its own Customer data, based on Customer id
+#Customer ID is used to structure the nodes in the tree, we use the classic version
+#with smaller nodes on the left side of the root node and larger nods on the right side
 class BST:
     def __init__(self):
         self.root = None
@@ -26,6 +29,7 @@ class BST:
             else:
                 current_node.right_child = Node(cust)
 
+    #Display all the nodes in the BST, in ascending order of their ID
     def inorder_traversal(self, node):
         customer_list = []
         if node:

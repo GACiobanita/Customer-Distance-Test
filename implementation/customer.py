@@ -1,7 +1,7 @@
 from .coordinate import Coordinate
 
 
-# how information from the customer.txt file will be stored during program activity
+# How information from the customer.txt file will be stored during program activity
 class Customer(object):
 
     def __init__(self, id=0, name='None', coord=None):

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='Customer-Distance-Test',
-    version='',
+    version='1.0',
     packages=['tests', 'implementation', 'implementation.algorithms'],
     url='https://github.com/GACiobanita/Customer-Distance-Test',
     license='',

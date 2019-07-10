@@ -1,9 +1,12 @@
-import os
-import json
 from .customer import Customer
 from .coordinate import Coordinate
 from . import distance_calc
 from .algorithms import BST
+
+#This class will take the fileData gathered by the Organizer class
+#It is responsible of checking the JSON keys for validity and for
+#calculating the distance between the customer coordinates and the
+#Dublin office coordinates
 
 class UserInviter(object):
 

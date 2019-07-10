@@ -1,6 +1,9 @@
 import json
 import os
 
+#The Organizer class will take the JSON file and verify if it is valid
+#It will either use a file passed by the user or the default one, as part
+#of the project
 
 class Organizer(object):
 
@@ -15,7 +18,7 @@ class Organizer(object):
         if os.path.exists(input_path) is True:
             self.input_file_path = input_path
         else:
-            print("File path is incorrect, default file will be used instead.")
+            print("Passed file path is incorrect, default file will be used instead.")
 
     def read_from_filepath(self):
         with open(self.input_file_path) as jsonFile:
@@ -23,5 +26,5 @@ class Organizer(object):
                 try:
                     self.fileData.append(json.loads(line))
                 except ValueError:
-                    print("Encountered error for line: " + line)
+                    print("Data is not valid JSON: " + line)
                     continue
