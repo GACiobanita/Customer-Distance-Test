@@ -6,7 +6,7 @@ setup(
     packages=['tests', 'implementation', 'implementation.algorithms'],
     url='https://github.com/GACiobanita/Customer-Distance-Test',
     license='',
-    author='George Alexandru Ciobantia',
+    author='George Alexandru Ciobanita',
     author_email='ciobanita_alex@yahoo.com',
     description='Customer Distance Calculator test'
 )
